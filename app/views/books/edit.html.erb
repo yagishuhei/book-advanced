@@ -1,6 +1,8 @@
 <h1>編集ページ</h1>
-<%= form_with model: @book do |f| %>
-<%= f.text_field :title %>
-<%= f.text_area :body %>
-<%= f.submit %>
+<%= form_with model: @book do |f| %><br/>
+<h4>タイトル</h4>
+<%= f.text_field :title %><br/>
+<h4>説明文</h4>
+<%= f.text_area :body %><br/>
+<%= f.submit %><br/>
 <% end %>
