@@ -1,6 +1,25 @@
 <h1>おすすめ本の投稿一覧</h1>
 
 <h3>新規投稿</h3>
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>説明</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <% @books.each do |book| %>
+    <tbody>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+        <td><%= link_to '編集', edit_book_path(book) %></td>
+        <td><%= link_to '削除', book_path(book), method: :delete %></td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>
 <%= form_with model: @book do |f| %>
 <%= f.label "タイトル" %>
 <%= f.text_field :title %>
@@ -9,7 +28,6 @@
 <%= f.submit '新規投稿' %>
 <% end %>
 
-<% @books.each do |book| %>
-<%= book.title %>
-<%= book.body %>
-<% end %>
+
+
+
