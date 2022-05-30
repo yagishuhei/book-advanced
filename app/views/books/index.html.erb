@@ -1,0 +1,15 @@
+<h1>おすすめ本の投稿一覧</h1>
+
+<h3>新規投稿</h3>
+<%= form_with model: @book do |f| %>
+<%= f.label "タイトル" %>
+<%= f.text_field :title %>
+<%= f.label "説明文" %>
+<%= f.text_area :body %>
+<%= f.submit '新規投稿' %>
+<% end %>
+
+<% @books.each do |book| %>
+<%= book.title %>
+<%= book.body %>
+<% end %>
