@@ -6,8 +6,5 @@
 <h4>自己紹介文</h4>
 <%= @user.introduction %>
 <%= link_to '編集する', edit_user_path(@user) %>
-<!--<h4>投稿した本</h4>-->
-<!--<%# @user.each do |book| %>-->
-<!--<%#= user.book.title %>-->
-<!--<%#= user.book.body %>-->
-<!--<%# end %>-->
+
+<%= render "books/index", books: @books %>
