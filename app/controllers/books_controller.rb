@@ -6,6 +6,8 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
+    ##アソシエーションを組んでいるのでuser_idが必要
+    @book.user_id = current_user.id
     @book.save
     redirect_to request.referer
   end
@@ -16,7 +18,7 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    @book.find(params[:id])
+    @book = Book.find(params[:id])
     @book.destroy
     redirect_to books_path
   end
