@@ -14,7 +14,18 @@
     <header>
       <% if user_signed_in? %>
         <li>
+          <%= link_to 'ホーム', root_path %>
+        </li>
+        <li>
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        </li>
+
+        <li>
+          <%= link_to '投稿本一覧', books_path %>
+        </li>
+
+        <li>
+          <%= link_to '会員一覧', users_path %>
         </li>
         <% else %>
         <li>

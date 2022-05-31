@@ -1,7 +1,9 @@
 <h1>本の投稿一覧</h1>
 
 <%= form_with model: @book do |f| %>
+<%= f.label :title, "タイトル" %>
 <%= f.text_field :title %><br/>
+<%= f.label :body, "説明文" %>
 <%= f.text_area :body %><br/>
 <%= f.submit '新規投稿' %><br/>
 <% end %>

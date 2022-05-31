@@ -1,2 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>プロフィール詳細</h1>
+<h4>ユーザー画像</h4>
+<%= image_tag @user.get_image("100x100") %>
+<h4>ユーザー名</h4>
+<%= @user.name %>
+<h4>自己紹介文</h4>
+<%= @user.introduction %>
+<%= link_to '編集する', edit_user_path(@user) %>
+<!--<h4>投稿した本</h4>-->
+<!--<%# @user.each do |book| %>-->
+<!--<%#= user.book.title %>-->
+<!--<%#= user.book.body %>-->
+<!--<%# end %>-->

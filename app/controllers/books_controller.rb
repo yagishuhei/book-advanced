@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   end
 
   def create
+    #データ保存にストロングパラメータが必要
     @book = Book.new(book_params)
     ##アソシエーションを組んでいるのでuser_idが必要
     @book.user_id = current_user.id
