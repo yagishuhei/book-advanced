@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_one_attached :image
 
+  #imageを出力する
   def get_image(size)
     unless image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')

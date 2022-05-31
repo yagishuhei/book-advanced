@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    #ユーザーの投稿した本全て
+    @books = @user.books
   end
 
   def edit
