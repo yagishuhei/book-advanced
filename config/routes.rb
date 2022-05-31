@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'homes/about', to: 'homes#about', as: 'about'
 
   resources :books do
+    #単数形だとidが含まれない（１投稿につき１イイね）
+    resource :favoretes, only:[:create, :destroy]
     resources :book_comments, only:[:create, :destroy]
   end
   resources :users
