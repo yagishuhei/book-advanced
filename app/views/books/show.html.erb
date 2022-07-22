@@ -38,16 +38,16 @@
 <% end %>
 
 
- <% if @post_image.favorited_by?(current_user) %>
+ <% if @book.favorited_by?(current_user) %>
     <p>
-      <%= link_to post_image_favorites_path(@post_image), method: :delete do %>
-        ♥<%= @post_image.favorites.count %> いいね
+      <%= link_to book_favorites_path(@book), method: :delete do %>
+        ♥<%= @book.favorites.count %> いいね
       <% end %>
     </p>
     <% else %>
     <p>
-      <%= link_to post_image_favorites_path(@post_image), method: :post do %>
-        ♡<%= @post_image.favorites.count %> いいね
+      <%= link_to book_favorites_path(@book), method: :post do %>
+        ♡<%= @book.favorites.count %> いいね
       <% end %>
     </p>
   <% end %>
