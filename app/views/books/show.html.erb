@@ -17,6 +17,7 @@
   </tbody>
 </table>
 
+<%= render "favorites/favorite_btn", book: @book %>
 <!--コメント機能追加-->
 <div class="comment">
   <p>コメント件数:<%= @book.book_comments.count %></p>
