@@ -1,1 +1,2 @@
-$(".favorite_btn").html("<%= j(render 'favorites/favorite_btn', book: @book) %>");
+<!--IDで指定された、DOMオブジェクトのhtml要素を変更-->
+$('#favorite_btn_<%= @book.id %>').html("<%= j(render partial: 'favorites/favorite_btn', locals: { book: @book }) %>");
