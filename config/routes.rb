@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :books do
     #単数形だとidが含まれない（１投稿につき１イイね）
-    resource :favorites, only:[:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
     resources :book_comments, only:[:create, :destroy]
   end
   resources :users
